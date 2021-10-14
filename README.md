@@ -31,11 +31,12 @@ The original datasets can be downloaded here: [IAS-Lab](http://robotics.dei.unip
 ## Pre-process Datasets
 To (1) extract 3D skeleton sequences of length **f** from original datasets and (2) process them in a unified format (``.npy``) for the model inputs, please simply run the following command: 
 ```bash
-python Pre-process.py --dataset KS20 --f 6
+python Pre-process.py --dataset KGBD --f 6
 
 ```
 Note: If you hope to preprocess manually (or you can get the already preprocessed data [here](./)), please frist download and unzip the original datasets to the current directory with following structure:
 ```bash
+Current Directory
 ├─ BIWI
 │    ├─ Testing
 │    │    ├─ Still
