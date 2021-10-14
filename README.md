@@ -47,7 +47,7 @@ Current Directory
 │    ├─ TestingB
 │    └─ Training
 └─ KGBD
-       └─ kinect gait raw dataset
+     └─ kinect gait raw dataset
 ```
 
 ## Model Usage
