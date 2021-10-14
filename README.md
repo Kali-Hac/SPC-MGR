@@ -23,7 +23,7 @@ Note: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based
 
 All the best models reported in our paper can be acquired on <br/> 
 <!-- https://pan.baidu.com/s/1AIn7Iyfn7B-w2Eh3ZfHIZA &nbsp; &nbsp; &nbsp; password：&nbsp; sd4v  <br/>  -->
-Please download the pre-processed datasets ``Datasets/`` and model files ``Re-ID_Models/`` into the current directory. <br/>
+Please download the pre-processed datasets ``Datasets/`` and model files ``re-ID_Models/`` into the current directory. <br/>
 
 
 The original datasets can be downloaded here: [IAS-Lab](http://robotics.dei.unipd.it/reid/index.php/downloads), [BIWI](http://robotics.dei.unipd.it/reid/index.php/downloads), [KGBD](https://www.researchgate.net/publication/275023745_Kinect_Gait_Biometry_Dataset_-_data_from_164_individuals_walking_in_front_of_a_X-Box_360_Kinect_Sensor), [KS20.](http://vislab.isr.ist.utl.pt/datasets/#ks20). We also provide the ``Preprocess.py'' for directly transforming original datasets to the formated training and testing data. <br/> 
@@ -32,7 +32,7 @@ The original datasets can be downloaded here: [IAS-Lab](http://robotics.dei.unip
  
 ## Usage
 
-To (1) train the unsupervised SPC-MGR to obtain multi-level skeleton graph representations and (2) validate their effectiveness on the person Re-ID task on a specific dataset (probe), simply run the following command:  
+To (1) train the unsupervised SPC-MGR to obtain multi-level skeleton graph representations and (2) validate their effectiveness on the person re-ID task on a specific dataset (probe), simply run the following command:  
 
 ```bash
 python SPC-MGR.py --dataset KS20 --probe probe
@@ -48,14 +48,14 @@ python SPC-MGR.py --dataset KS20 --probe probe
 ```
 Please see ```SPC-MGR.py``` for more details.
 
-To print evaluation results (Top-1, Top-5, Top-10 Accuracy, mAP) of the best model saved in default directory ('Re-ID_Models/(Dataset)/(Probe)'), run:
+To print evaluation results (Top-1, Top-5, Top-10 Accuracy, mAP) of the best model saved in default directory ('re-ID_Models/(Dataset)/(Probe)'), run:
 
 ```bash
 python SPC-MGR.py --dataset KS20 --probe probe --evaluate 1
 ```
 
 ## Application to Model-Estimated Skeleton Data 
-To apply our SPC-MGR to a large RGB-based gait dataset (CASIA B), we exploit pose estimation methods to extract 3D skeletons from RGB videos of CASIA B as follows:
+To apply our SPC-MGR to person re-ID under the large-scale RGB setting (CASIA B), we exploit pose estimation methods to extract 3D skeletons from RGB videos of CASIA B as follows:
 - Step 1: Download [CASIA-B Dataset](http://www.cbsr.ia.ac.cn/english/Gait%20Databases.asp)
 - Step 2: Extract the 2D human body joints by using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
 - Step 3: Estimate the 3D human body joints by using [3DHumanPose](https://github.com/flyawaychase/3DHumanPose)
@@ -65,7 +65,7 @@ We provide already pre-processed skeleton data of CASIA B for single-condiction 
 Please download the pre-processed datasets into the directory ``Datasets/``. <br/>
 
 ## Usage
-To (1) train the SPC-MGR to obtain skeleton representations and (2) validate their effectiveness on the person Re-ID task on CASIA B under single-condiction and cross-condiction settings, simply run the following command:
+To (1) train the SPC-MGR to obtain skeleton representations and (2) validate their effectiveness on the person re-ID task on CASIA B under single-condiction and cross-condiction settings, simply run the following command:
 
 ```bash
 python SPC-MGR.py --dataset CAISA_B --probe_type nm.nm --length 40
@@ -76,6 +76,23 @@ python SPC-MGR.py --dataset CAISA_B --probe_type nm.nm --length 40
 # --gpu [0, 1, ...]
 
 ```
+
+# Application to Generalized Person re-ID 
+To transfer the SPC-MGR model trained on a **source** dataset to a new **target** dataset and further **fine-tune** with the unlabeled target data for the generalized person re-ID task, simply run the following command:  
+```bash
+python SPC-MGR.py --dataset KS20 --probe probe --S_dataset KGBD --S_probe probe --mode DG
+
+# Target dataset: --dataset [IAS, KS20, BIWI, KGBD, CASIA_B]
+# Source dataset: --S_dataset [IAS, KS20, BIWI, KGBD, CASIA_B]
+# Target probe: --probe ['probe' (for KS20 or KGBD), 'A' (for IAS-A probe), 'B' (for IAS-B probe), 'Walking' (for BIWI-Walking probe), 'Still' (for BIWI-Still probe)] 
+# Source probe: --S_probe ['probe' (for KS20 or KGBD), 'A' (for IAS-A probe), 'B' (for IAS-B probe), 'Walking' (for BIWI-Walking probe), 'Still' (for BIWI-Still probe)] 
+# --(t, lr, eps, min_samples, m, fusion_lambda) with default settings for the source dataset
+# --mode [DG (for direct domain generalizatio/transferring)]
+# --gpu [0, 1, ...]
+
+```
+Please see ```SPC-MGR.py``` for more details.
+
 
 <!-- ## Results -->
 <!-- ![results](img/SM-SGE-results.png) -->
