@@ -77,7 +77,7 @@ python SPC-MGR.py --dataset CAISA_B --probe_type nm.nm --length 40
 
 ```
 
-# Application to Generalized Person re-ID 
+## Application to Generalized Person re-ID 
 To transfer the SPC-MGR model trained on a **source** dataset to a new **target** dataset and further **fine-tune** with the unlabeled target data for the generalized person re-ID task, please simply run the following command:  
 ```bash
 python SPC-MGR.py --dataset KS20 --probe probe --S_dataset KGBD --S_probe probe --mode DG
@@ -92,7 +92,7 @@ python SPC-MGR.py --dataset KS20 --probe probe --S_dataset KGBD --S_probe probe 
 
 ```
 
-Note: This task requires first training a model on a specific probe set (``S_probe'') of the source dataset (``S_dataset''), and then applying this model to a specific target probe set (``probe'') of the target dataset (``dataset''). Our code will automatically fine-tune the pre-trained model on the unlabled data of target dataset.
+Note: This task requires first training a model on a specific probe set ('--S_probe') of the source dataset ('--S_dataset'), and then applying this model to a specific target probe set ('--probe') of the target dataset ('--dataset'). Our code will automatically fine-tune the pre-trained model on the unlabled data of target dataset.
 
 Please see ```SPC-MGR.py``` for more details.
 
