@@ -28,7 +28,7 @@ Please download the pre-processed datasets ``Datasets/`` and model files ``re-ID
 
 The original datasets can be downloaded here: [IAS-Lab](http://robotics.dei.unipd.it/reid/index.php/downloads), [BIWI](http://robotics.dei.unipd.it/reid/index.php/downloads), [KGBD](https://www.researchgate.net/publication/275023745_Kinect_Gait_Biometry_Dataset_-_data_from_164_individuals_walking_in_front_of_a_X-Box_360_Kinect_Sensor), [KS20](http://vislab.isr.ist.utl.pt/datasets/#ks20), [CASIA-B](http://www.cbsr.ia.ac.cn/english/Gait%20Databases.asp). We also provide the ``Preprocess.py`` for directly transforming original datasets to the formated training and testing data. <br/> 
 
-## Pre-process Datasets
+## Dataset Pre-processing
 To (1) extract 3D skeleton sequences of length **f** from original datasets and (2) process them in a unified format (``.npy``) for the model inputs, please simply run the following command: 
 ```bash
 python Pre-process.py --dataset KGBD --f 6
@@ -50,7 +50,7 @@ Current Directory
        └─ kinect gait raw dataset
 ```
 
-## Usage
+## Model Usage
 
 To (1) train the unsupervised SPC-MGR to obtain multi-level skeleton graph representations and (2) validate their effectiveness on the person re-ID task on a specific dataset (probe), please simply run the following command:  
 
