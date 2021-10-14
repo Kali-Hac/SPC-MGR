@@ -48,7 +48,7 @@ python SPC-MGR.py --dataset KS20 --probe probe
 ```
 Please see ```SPC-MGR.py``` for more details.
 
-To print evaluation results (Top-1, Top-5, Top-10 Accuracy, mAP) of the best model saved in default directory (''re-ID_Models/(Dataset)/(Probe)''), run:
+To print evaluation results (Top-1, Top-5, Top-10 Accuracy, mAP) of the best model saved in default directory (```re-ID_Models/(Dataset)/(Probe)```), run:
 
 ```bash
 python SPC-MGR.py --dataset KS20 --probe probe --evaluate 1
@@ -92,7 +92,7 @@ python SPC-MGR.py --dataset KS20 --probe probe --S_dataset KGBD --S_probe probe 
 
 ```
 
-Note: This task requires first training a model on a specific probe set (''--S_probe'') of the source dataset (''--S_dataset''), and then applying this model to a specific target probe set (''--probe'') of the target dataset (''--dataset''). Our code will automatically fine-tune the pre-trained model on the unlabled data of target dataset.
+Note: This task requires first training a model on a specific probe set (```--S_probe```) of the source dataset (```--S_dataset```), and then applying this model to a specific target probe set (```--probe```) of the target dataset (```--dataset```). Our code will automatically fine-tune the pre-trained model on the unlabled data of target dataset.
 
 Please see ```SPC-MGR.py``` for more details.
 
