@@ -48,7 +48,7 @@ python SPC-MGR.py --dataset KS20 --probe probe
 ```
 Please see ```SPC-MGR.py``` for more details.
 
-To print evaluation results (Top-1, Top-5, Top-10 Accuracy, mAP) of the best model saved in default directory ('re-ID_Models/(Dataset)/(Probe)'), run:
+To print evaluation results (Top-1, Top-5, Top-10 Accuracy, mAP) of the best model saved in default directory ("re-ID_Models/(Dataset)/(Probe)"), run:
 
 ```bash
 python SPC-MGR.py --dataset KS20 --probe probe --evaluate 1
@@ -60,12 +60,12 @@ To apply our SPC-MGR to person re-ID under the large-scale RGB setting (CASIA B)
 - Step 2: Extract the 2D human body joints by using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
 - Step 3: Estimate the 3D human body joints by using [3DHumanPose](https://github.com/flyawaychase/3DHumanPose)
 
-We provide already pre-processed skeleton data of CASIA B for **single-condiction** (Nm-Nm, Cl-Cl, Bg-Bg) and **cross-condition evaluation** (Cl-Nm, Bg-Nm) (f=40/50/60) on 
+We provide already pre-processed skeleton data of CASIA B for **single-condition** (Nm-Nm, Cl-Cl, Bg-Bg) and **cross-condition evaluation** (Cl-Nm, Bg-Nm) (f=40/50/60) on 
 <!-- &nbsp; &nbsp; &nbsp; https://pan.baidu.com/s/1gDekBzf-3bBVdd0MGL0CvA &nbsp; &nbsp; &nbsp; password：&nbsp;  x3e5 <br/> -->
 Please download the pre-processed datasets into the directory ``Datasets/``. <br/>
 
 ## Usage
-To (1) train the SPC-MGR to obtain skeleton representations and (2) validate their effectiveness on the person re-ID task on CASIA B under **single-condiction** and **cross-condiction** settings, please simply run the following command:
+To (1) train the SPC-MGR to obtain skeleton representations and (2) validate their effectiveness on the person re-ID task on CASIA B under **single-condition** and **cross-condition** settings, please simply run the following command:
 
 ```bash
 python SPC-MGR.py --dataset CAISA_B --probe_type nm.nm --length 40
