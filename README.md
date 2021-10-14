@@ -26,10 +26,29 @@ All the best models reported in our paper can be acquired on <br/>
 Please download the pre-processed datasets ``Datasets/`` and model files ``re-ID_Models/`` into the current directory. <br/>
 
 
-The original datasets can be downloaded here: [IAS-Lab](http://robotics.dei.unipd.it/reid/index.php/downloads), [BIWI](http://robotics.dei.unipd.it/reid/index.php/downloads), [KGBD](https://www.researchgate.net/publication/275023745_Kinect_Gait_Biometry_Dataset_-_data_from_164_individuals_walking_in_front_of_a_X-Box_360_Kinect_Sensor), [KS20](http://vislab.isr.ist.utl.pt/datasets/#ks20), [CASIA-B](http://www.cbsr.ia.ac.cn/english/Gait%20Databases.asp). We also provide the ''Preprocess.py'' for directly transforming original datasets to the formated training and testing data. <br/> 
+The original datasets can be downloaded here: [IAS-Lab](http://robotics.dei.unipd.it/reid/index.php/downloads), [BIWI](http://robotics.dei.unipd.it/reid/index.php/downloads), [KGBD](https://www.researchgate.net/publication/275023745_Kinect_Gait_Biometry_Dataset_-_data_from_164_individuals_walking_in_front_of_a_X-Box_360_Kinect_Sensor), [KS20](http://vislab.isr.ist.utl.pt/datasets/#ks20), [CASIA-B](http://www.cbsr.ia.ac.cn/english/Gait%20Databases.asp). We also provide the ``Preprocess.py`` for directly transforming original datasets to the formated training and testing data. <br/> 
 
- 
- 
+## Pre-process Datasets
+To (1) extract 3D skeleton sequences of length **f** from original datasets and (2) process them in a unified format (``.npy``) for the model inputs, please simply run the following command: 
+```bash
+python Pre-process.py --dataset KS20 --f 6
+
+```
+Note: If you hope to preprocess manually (or you can get the already preprocessed data [here](./)), please frist download and unzip the original datasets to the current directory with following structure:
+```bash
+├─ BIWI
+│    ├─ Testing
+│    │    ├─ Still
+│    │    └─ Walking
+│    └─ Training
+├─ IAS
+│    ├─ TestingA
+│    ├─ TestingB
+│    └─ Training
+└─ KGBD
+       └─ kinect gait raw dataset
+```
+
 ## Usage
 
 To (1) train the unsupervised SPC-MGR to obtain multi-level skeleton graph representations and (2) validate their effectiveness on the person re-ID task on a specific dataset (probe), please simply run the following command:  
