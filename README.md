@@ -32,7 +32,7 @@ The original datasets can be downloaded here: [IAS-Lab](http://robotics.dei.unip
  
 ## Usage
 
-To (1) train the unsupervised SPC-MGR to obtain multi-level skeleton graph representations and (2) validate their effectiveness on the person re-ID task on a specific dataset (probe), simply run the following command:  
+To (1) train the unsupervised SPC-MGR to obtain multi-level skeleton graph representations and (2) validate their effectiveness on the person re-ID task on a specific dataset (probe), please simply run the following command:  
 
 ```bash
 python SPC-MGR.py --dataset KS20 --probe probe
@@ -60,12 +60,12 @@ To apply our SPC-MGR to person re-ID under the large-scale RGB setting (CASIA B)
 - Step 2: Extract the 2D human body joints by using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
 - Step 3: Estimate the 3D human body joints by using [3DHumanPose](https://github.com/flyawaychase/3DHumanPose)
 
-We provide already pre-processed skeleton data of CASIA B for single-condiction (Nm-Nm, Cl-Cl, Bg-Bg) and cross-Condition evaluation (Cl-Nm, Bg-Nm) (f=40/50/60) on 
+We provide already pre-processed skeleton data of CASIA B for **single-condiction** (Nm-Nm, Cl-Cl, Bg-Bg) and **cross-condition evaluation** (Cl-Nm, Bg-Nm) (f=40/50/60) on 
 <!-- &nbsp; &nbsp; &nbsp; https://pan.baidu.com/s/1gDekBzf-3bBVdd0MGL0CvA &nbsp; &nbsp; &nbsp; password：&nbsp;  x3e5 <br/> -->
 Please download the pre-processed datasets into the directory ``Datasets/``. <br/>
 
 ## Usage
-To (1) train the SPC-MGR to obtain skeleton representations and (2) validate their effectiveness on the person re-ID task on CASIA B under single-condiction and cross-condiction settings, simply run the following command:
+To (1) train the SPC-MGR to obtain skeleton representations and (2) validate their effectiveness on the person re-ID task on CASIA B under **single-condiction** and **cross-condiction** settings, please simply run the following command:
 
 ```bash
 python SPC-MGR.py --dataset CAISA_B --probe_type nm.nm --length 40
@@ -78,7 +78,7 @@ python SPC-MGR.py --dataset CAISA_B --probe_type nm.nm --length 40
 ```
 
 # Application to Generalized Person re-ID 
-To transfer the SPC-MGR model trained on a **source** dataset to a new **target** dataset and further **fine-tune** with the unlabeled target data for the generalized person re-ID task, simply run the following command:  
+To transfer the SPC-MGR model trained on a **source** dataset to a new **target** dataset and further **fine-tune** with the unlabeled target data for the generalized person re-ID task, please simply run the following command:  
 ```bash
 python SPC-MGR.py --dataset KS20 --probe probe --S_dataset KGBD --S_probe probe --mode DG
 
@@ -91,6 +91,9 @@ python SPC-MGR.py --dataset KS20 --probe probe --S_dataset KGBD --S_probe probe 
 # --gpu [0, 1, ...]
 
 ```
+
+Note: This task requires first training a model on a specific probe set (``S_probe'') of the source dataset (``S_dataset''), and then applying this model to a specific target probe set (``probe'') of the target dataset (``dataset''). Our code will automatically fine-tune the pre-trained model on the unlabled data of target dataset.
+
 Please see ```SPC-MGR.py``` for more details.
 
 
