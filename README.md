@@ -19,10 +19,12 @@ We further demonstrate its effectiveness on 3D skeleton data estimated from larg
 - Pytorch >= 1.1.0
 - faiss-gpu >= 1.6.3
 
-Here we provide an example for installing the requirment for the environment with cudatoolkit=9.0 and cudnn=7.6.5:
+Here we provide a configuration file to install the requirments with cudatoolkit=9.0 and cudnn=7.6.5:
 ```bash
 conda install --file requirements.txt
 ```
+
+**Note**: If this file fails to work on your machine, please install the cudatoolkit and cudnn version corresponding to your graphic cards.
 
 
 ## Datasets and Models
