@@ -124,7 +124,7 @@ To apply our SPC-MGR to person re-ID under the large-scale RGB setting (CASIA B)
 - Step 2: Extract the 2D human body joints by using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
 - Step 3: Estimate the 3D human body joints by using [3DHumanPose](https://github.com/flyawaychase/3DHumanPose)
 
-We provide already pre-processed skeleton data of CASIA B for **single-condition** (Nm-Nm, Cl-Cl, Bg-Bg) and **cross-condition evaluation** (Cl-Nm, Bg-Nm) (**f=40/50/60**) [**here**](https://drive.google.com/file/d/1Tw5GiaVBzvmTndIHK1ExXTUPscQyLrSw/view?usp=sharing) 
+We provide already pre-processed skeleton data of CASIA B for **single-condition** (Nm-Nm, Cl-Cl, Bg-Bg) and **cross-condition evaluation** (Cl-Nm, Bg-Nm) (**f=40/50/60**) [**here**](https://drive.google.com/file/d/1Tw5GiaVBzvmTndIHK1ExXTUPscQyLrSw/view?usp=sharing). 
 <!-- &nbsp; &nbsp; &nbsp; https://pan.baidu.com/s/1gDekBzf-3bBVdd0MGL0CvA &nbsp; &nbsp; &nbsp; password：&nbsp;  x3e5 <br/> -->
 Please download the pre-processed datasets into the directory ``Datasets/``. <br/>
 
