@@ -1100,7 +1100,7 @@ elif FLAGS.mode == 'DG' and FLAGS.S_dataset != '':
 				best_cluster_info_1[0] = num_cluster
 				best_cluster_info_1[1] = outlier_num
 				cur_patience = 0
-				if FLAGS.mode == 'DG' and FLAGS.S_dataset == '':
+				if FLAGS.mode == 'DG' and FLAGS.S_dataset != '':
 					if FLAGS.probe_view == '' and FLAGS.gallery_view == '':
 						# checkpt_file = pre_dir + dataset + '/' + probe + '_' + str(fusion_lambda) + '_' + str(
 						# 	nhood) + '_' + str(
