@@ -56,7 +56,6 @@ python Pre-process.py 6
 ```
 After dataset preprocessing, the auto-generated folder structure of datasets is as follows:
 ```bash
-[Current Directory]
 Datasets
 ├─ BIWI
 │    └─ 6
