@@ -14,8 +14,16 @@ This is the official implementation of SPC-MGR presented by "Skeleton Prototype 
 We further demonstrate its effectiveness on 3D skeleton data estimated from large-scale RGB videos. -->
 
 ## Requirements
-- Python 3.5
-- Tensorflow 1.10.0 (GPU)
+- Python >= 3.5
+- Tensorflow >= 1.14.0 (GPU)
+- Pytorch >= 1.1.0
+- faiss-gpu >= 1.6.3
+
+Here we provide an example for installing the requirment for the environment with cudatoolkit=9.0 and cudnn=7.6.5:
+```bash
+conda install --file requirements.txt
+```
+
 
 ## Datasets and Models
 We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) [**here**](https://drive.google.com/file/d/1j7G1IJyuav6eIaG9TF1QXBJt77Awt_Am/view?usp=sharing). <br/>
@@ -23,7 +31,7 @@ We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with vario
 
 **Note**: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based gait dataset CASIA-B are available upon request. If you have signed the license agreement and been granted the right to use them, please email me with the signed agreement and I will share the complete pre-processed KS20 and CASIA-B data.
 
-All the best models reported in our paper can be acquired on <br/> 
+<!-- All the best models reported in our paper can be acquired on <br/>  -->
 <!-- https://pan.baidu.com/s/1AIn7Iyfn7B-w2Eh3ZfHIZA &nbsp; &nbsp; &nbsp; password：&nbsp; sd4v  <br/>  -->
 Please download the pre-processed datasets and model files while unzipping them to ``Datasets/`` and ``ReID_Models/`` folders in the current directory. <br/>
 
