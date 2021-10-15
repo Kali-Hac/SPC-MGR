@@ -19,7 +19,7 @@ We further demonstrate its effectiveness on 3D skeleton data estimated from larg
 We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths on <br/>
 <!-- https://pan.baidu.com/s/1nuFH2EENyrMZbTnKGYssTw  &nbsp; &nbsp; &nbsp; password：&nbsp;  hyo7  <br/> -->
 
-Note: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based gait dataset CASIA-B are available upon request. If you have signed the license agreement and been granted the right to use them, please email me with the signed agreement and I will share the complete pre-processed KS20 and CASIA-B data.
+**Note**: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based gait dataset CASIA-B are available upon request. If you have signed the license agreement and been granted the right to use them, please email me with the signed agreement and I will share the complete pre-processed KS20 and CASIA-B data.*
 
 All the best models reported in our paper can be acquired on <br/> 
 <!-- https://pan.baidu.com/s/1AIn7Iyfn7B-w2Eh3ZfHIZA &nbsp; &nbsp; &nbsp; password：&nbsp; sd4v  <br/>  -->
@@ -34,9 +34,9 @@ To (1) extract 3D skeleton sequences of length **f** from original datasets and 
 python Pre-process.py --dataset KGBD --f 6
 
 ```
-Note: If you hope to preprocess manually (or you can get the already preprocessed data [here](./)), please frist download and unzip the original datasets to the current directory with following structure:
+**Note**: If you hope to preprocess manually (or *you can get the already preprocessed data [**here**](./)*), please frist download and unzip the original datasets to the current directory with following folder structure:
 ```bash
-Current Directory
+[Current Directory]
 ├─ BIWI
 │    ├─ Testing
 │    │    ├─ Still
@@ -46,8 +46,14 @@ Current Directory
 │    ├─ TestingA
 │    ├─ TestingB
 │    └─ Training
-└─ KGBD
-     └─ kinect gait raw dataset
+├─ KGBD
+│    └─ kinect gait raw dataset
+└─ KS20
+     ├─ frontal
+     ├─ left_diagonal
+     ├─ left_lateral
+     ├─ right_diagonal
+     └─ right_lateral
 ```
 
 ## Model Usage
@@ -112,7 +118,7 @@ python SPC-MGR.py --dataset KS20 --probe probe --S_dataset KGBD --S_probe probe 
 
 ```
 
-Note: This task requires first training a model on a specific probe set (```--S_probe```) of the source dataset (```--S_dataset```), and then applying this model to a specific target probe set (```--probe```) of the target dataset (```--dataset```). Our code will automatically fine-tune the pre-trained model on the unlabled data of target dataset.
+**Note**: This task requires first training a model on a specific probe set (```--S_probe```) of the source dataset (```--S_dataset```), and then applying this model to a specific target probe set (```--probe```) of the target dataset (```--dataset```). Our code will automatically fine-tune the pre-trained model on the unlabled data of target dataset.
 
 Please see ```SPC-MGR.py``` for more details.
 
