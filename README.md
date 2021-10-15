@@ -16,8 +16,7 @@ We further demonstrate its effectiveness on 3D skeleton data estimated from larg
 - Tensorflow 1.10.0 (GPU)
 
 ## Datasets and Models
-We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) on <br/>
-https://drive.google.com/file/d/1j7G1IJyuav6eIaG9TF1QXBJt77Awt_Am/view?usp=sharing <br/>
+We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) [**here**](https://drive.google.com/file/d/1j7G1IJyuav6eIaG9TF1QXBJt77Awt_Am/view?usp=sharing) <br/>
 <!-- https://pan.baidu.com/s/1nuFH2EENyrMZbTnKGYssTw  &nbsp; &nbsp; &nbsp; password：&nbsp;  hyo7  <br/> -->
 
 **Note**: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based gait dataset CASIA-B are available upon request. If you have signed the license agreement and been granted the right to use them, please email me with the signed agreement and I will share the complete pre-processed KS20 and CASIA-B data.
