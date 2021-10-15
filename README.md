@@ -164,7 +164,7 @@ Please see ```SPC-MGR.py``` for more details.
 <!-- ## Results -->
 <!-- ![results](img/SM-SGE-results.png) -->
 
-# Acknowledgements
+## Acknowledgements
 
 The SPC-MGR is built based in part on the project of [GAT](https://github.com/PetarV-/GAT) and part on our project of [MG-SCR](https://github.com/Kali-Hac/MG-SCR). Thanks to Veličković *et al.* for opening source of their excellent works [GAT](https://github.com/PetarV-/GAT). 
 
