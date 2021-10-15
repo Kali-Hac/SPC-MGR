@@ -27,7 +27,7 @@ conda install --file requirements.txt
 
 
 ## Datasets and Models
-We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) [**here**](https://drive.google.com/file/d/1JXqn35cEWFibaVcYQom-MyLw0xEnnhE5/view?usp=sharing). <br/>
+We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) [**here**](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing). <br/>
 <!-- https://pan.baidu.com/s/1nuFH2EENyrMZbTnKGYssTw  &nbsp; &nbsp; &nbsp; password：&nbsp;  hyo7  <br/> -->
 
 **Note**: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based gait dataset CASIA-B are available upon request. If you have signed the license agreement and been granted the right to use them, please email me with the signed agreement and I will share the complete pre-processed KS20 and CASIA-B data.
@@ -44,7 +44,7 @@ To (1) extract 3D skeleton sequences of length **f=6** from original datasets an
 ```bash
 python Pre-process.py 6
 ```
-**Note**: If you hope to preprocess manually (or *you can get the already preprocessed data [**here**](https://drive.google.com/file/d/1JXqn35cEWFibaVcYQom-MyLw0xEnnhE5/view?usp=sharing)*), please frist download and unzip the original datasets to the current directory with following folder structure:
+**Note**: If you hope to preprocess manually (or *you can get the already preprocessed data [**here**](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing)*), please frist download and unzip the original datasets to the current directory with following folder structure:
 ```bash
 [Current Directory]
 ├─ BIWI
@@ -65,7 +65,7 @@ python Pre-process.py 6
      ├─ right_diagonal
      └─ right_lateral
 ```
-After dataset preprocessing, the auto-generated folder structure of datasets is as follows (same as [**the already preprocessed**](https://drive.google.com/file/d/1JXqn35cEWFibaVcYQom-MyLw0xEnnhE5/view?usp=sharing)):
+After dataset preprocessing, the auto-generated folder structure of datasets is as follows (same as [**the already preprocessed**](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing)):
 ```bash
 Datasets
 ├─ BIWI
