@@ -10,8 +10,7 @@ This is the official implementation of SPC-MGR presented by "Skeleton Prototype 
 
 <!-- ![image](https://github.com/Kali-Hac/SM-SGE/blob/main/img/overview.png) -->
 
-<!-- Abstract: Person re-identification via 3D skeletons is an emerging topic with great potential in security-critical applications. Existing methods typically learn body and motion features from the body-joint trajectory, whereas they lack a systematic way to model body structure and underlying relations of body components beyond the scale of body joints. In this paper, we for the first time propose a Self-supervised Multi-scale Skeleton Graph Encoding (SM-SGE) framework that comprehensively models human body, component relations, and skeleton dynamics from unlabeled skeleton graphs of various scales to learn an effective skeleton representation for person Re-ID. Specifically, we first devise multi-scale skeleton graphs with coarse-to-fine human body partitions, which enables us to model body structure and skeleton dynamics at multiple levels. Second, to mine inherent correlations between body components in skeletal motion, we propose a multi-scale graph relation network to learn structural relations between adjacent body-component nodes and collaborative relations among nodes of different scales, so as to capture more discriminative skeleton graph features. Last, we propose a novel multi-scale skeleton reconstruction mechanism to enable our framework to encode skeleton dynamics and high-level semantics from unlabeled skeleton graphs, which encourages learning a discriminative skeleton representation for person Re-ID. Extensive experiments show that SM-SGE outperforms most state-of-the-art skeleton-based methods. 
-We further demonstrate its effectiveness on 3D skeleton data estimated from large-scale RGB videos. -->
+<!-- Abstract: -->
 
 ## Requirements
 - Python >= 3.5
@@ -28,7 +27,7 @@ conda install --file requirements.txt
 
 
 ## Datasets and Models
-We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) [**here**](https://drive.google.com/file/d/1vboVP9SlyYxE_zBbF4QjosMgU4t4AY0B/view?usp=sharing). <br/>
+We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) [**here**](https://drive.google.com/file/d/1JXqn35cEWFibaVcYQom-MyLw0xEnnhE5/view?usp=sharing). <br/>
 <!-- https://pan.baidu.com/s/1nuFH2EENyrMZbTnKGYssTw  &nbsp; &nbsp; &nbsp; password：&nbsp;  hyo7  <br/> -->
 
 **Note**: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based gait dataset CASIA-B are available upon request. If you have signed the license agreement and been granted the right to use them, please email me with the signed agreement and I will share the complete pre-processed KS20 and CASIA-B data.
@@ -45,7 +44,7 @@ To (1) extract 3D skeleton sequences of length **f=6** from original datasets an
 ```bash
 python Pre-process.py 6
 ```
-**Note**: If you hope to preprocess manually (or *you can get the already preprocessed data [**here**](./)*), please frist download and unzip the original datasets to the current directory with following folder structure:
+**Note**: If you hope to preprocess manually (or *you can get the already preprocessed data [**here**](https://drive.google.com/file/d/1JXqn35cEWFibaVcYQom-MyLw0xEnnhE5/view?usp=sharing)*), please frist download and unzip the original datasets to the current directory with following folder structure:
 ```bash
 [Current Directory]
 ├─ BIWI
@@ -66,7 +65,7 @@ python Pre-process.py 6
      ├─ right_diagonal
      └─ right_lateral
 ```
-After dataset preprocessing, the auto-generated folder structure of datasets is as follows (same as [**the already preprocessed**](https://drive.google.com/file/d/1j7G1IJyuav6eIaG9TF1QXBJt77Awt_Am/view?usp=sharing)):
+After dataset preprocessing, the auto-generated folder structure of datasets is as follows (same as [**the already preprocessed**](https://drive.google.com/file/d/1JXqn35cEWFibaVcYQom-MyLw0xEnnhE5/view?usp=sharing)):
 ```bash
 Datasets
 ├─ BIWI
