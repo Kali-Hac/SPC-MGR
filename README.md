@@ -19,7 +19,7 @@ We further demonstrate its effectiveness on 3D skeleton data estimated from larg
 We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths on <br/>
 <!-- https://pan.baidu.com/s/1nuFH2EENyrMZbTnKGYssTw  &nbsp; &nbsp; &nbsp; password：&nbsp;  hyo7  <br/> -->
 
-**Note**: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based gait dataset CASIA-B are available upon request. If you have signed the license agreement and been granted the right to use them, please email me with the signed agreement and I will share the complete pre-processed KS20 and CASIA-B data.*
+**Note**: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based gait dataset CASIA-B are available upon request. If you have signed the license agreement and been granted the right to use them, please email me with the signed agreement and I will share the complete pre-processed KS20 and CASIA-B data.
 
 All the best models reported in our paper can be acquired on <br/> 
 <!-- https://pan.baidu.com/s/1AIn7Iyfn7B-w2Eh3ZfHIZA &nbsp; &nbsp; &nbsp; password：&nbsp; sd4v  <br/>  -->
@@ -54,6 +54,35 @@ python Pre-process.py --dataset KGBD --f 6
      ├─ left_lateral
      ├─ right_diagonal
      └─ right_lateral
+```
+After dataset preprocessing, the auto-generated folder structure of datasets is as follows:
+```bash
+[Current Directory]
+Datasets
+├─ BIWI
+│    └─ 6
+│      ├─ test_npy_data
+│      │    ├─ Still
+│      │    └─ Walking
+│      └─ train_npy_data
+├─ IAS
+│    └─ 6
+│      ├─ test_npy_data
+│      │    ├─ A
+│      │    └─ B
+│      └─ train_npy_data
+├─ KGBD
+│    └─ 6
+│      ├─ test_npy_data
+│      │    ├─ gallery
+│      │    └─ probe
+│      └─ train_npy_data
+└─ KS20
+    └─ 6
+      ├─ test_npy_data
+      │    ├─ gallery
+      │    └─ probe
+      └─ train_npy_data
 ```
 
 ## Model Usage
