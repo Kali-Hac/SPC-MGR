@@ -66,7 +66,7 @@ python Pre-process.py 6
      ├─ right_diagonal
      └─ right_lateral
 ```
-After dataset preprocessing, the auto-generated folder structure of datasets is as follows:
+After dataset preprocessing, the auto-generated folder structure of datasets is as follows (same as [**the already preprocessed**](https://drive.google.com/file/d/1j7G1IJyuav6eIaG9TF1QXBJt77Awt_Am/view?usp=sharing)):
 ```bash
 Datasets
 ├─ BIWI
