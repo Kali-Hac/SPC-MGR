@@ -93,6 +93,7 @@ Datasets
       │    └─ probe
       └─ train_npy_data
 ```
+**Note**: KS20 data need first transforming ".mat" to ".txt". If you are interested in the complete preprocessing of KS20 and CASIA-B, please contact me and I will share.
 
 ## Model Usage
 
