@@ -3,7 +3,7 @@
 ![Pytorch >=1.1.0](https://img.shields.io/badge/Pytorch->=1.1.0-green.svg)
 
 # Skeleton Prototype Contrastive Learning with Multi-level Graph Relation Modeling for Unsupervised Person Re-Identification
-By Haocong Rao, Chunyan Miao.
+By Haocong Rao and Chunyan Miao.
 
 ## Introduction
 This is the official implementation of SPC-MGR presented by "Skeleton Prototype Contrastive Learning with Multi-level Graph Relation Modeling for Unsupervised Person Re-Identification". The codes are used to reproduce experimental results in the [paper](./).
