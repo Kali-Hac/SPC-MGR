@@ -27,14 +27,11 @@ conda install --file requirements.txt
 
 
 ## Datasets and Models
-We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) [**HERE**](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing). <br/>
-<!-- https://pan.baidu.com/s/1nuFH2EENyrMZbTnKGYssTw  &nbsp; &nbsp; &nbsp; password：&nbsp;  hyo7  <br/> -->
-
-**Note**: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based gait dataset CASIA-B are available upon request. If you have signed the license agreement and been granted the right to use them, please email us with the signed agreement and we will share the complete pre-processed KS20 and CASIA-B data.
-
-The pre-trained models can be acquired [**HERE**](https://drive.google.com/file/d/1I7bWc2vCYfBC-uxcCTh4Uvn8ouC1oUNx/view?usp=sharing). Note that we report the average performance of our approach on all datasets, and here the provided models may produce better results than the paper. <br/> 
+We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) [**HERE**](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing) and the pre-trained models [**HERE**](https://drive.google.com/file/d/1I7bWc2vCYfBC-uxcCTh4Uvn8ouC1oUNx/view?usp=sharing). Note that we report the average performance of our approach on all datasets, and here the provided models may produce better results than the paper. <br/>
 
 Please download the pre-processed datasets and model files while unzipping them to ``Datasets/`` and ``ReID_Models/`` folders in the current directory. <br/>
+
+**Note**: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based gait dataset CASIA-B are available upon request. If you have signed the license agreement and been granted the right to use them, please email us with the signed agreement and we will share the complete pre-processed KS20 and CASIA-B data.
 
 
 The original datasets can be downloaded here: [IAS-Lab](http://robotics.dei.unipd.it/reid/index.php/downloads), [BIWI](http://robotics.dei.unipd.it/reid/index.php/downloads), [KGBD](https://www.researchgate.net/publication/275023745_Kinect_Gait_Biometry_Dataset_-_data_from_164_individuals_walking_in_front_of_a_X-Box_360_Kinect_Sensor), [KS20](http://vislab.isr.ist.utl.pt/datasets/#ks20), [CASIA-B](http://www.cbsr.ia.ac.cn/english/Gait%20Databases.asp). We also provide the ``Preprocess.py`` for directly transforming original datasets to the formated training and testing data. <br/> 
