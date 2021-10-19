@@ -6,7 +6,7 @@
 By Haocong Rao and Chunyan Miao.
 
 ## Introduction
-This is the official implementation of SPC-MGR presented by "Skeleton Prototype Contrastive Learning with Multi-level Graph Relation Modeling for Unsupervised Person Re-Identification". The codes are used to reproduce experimental results in the [**PAPER**](./).
+This is the official implementation of SPC-MGR presented by "Skeleton Prototype Contrastive Learning with Multi-level Graph Relation Modeling for Unsupervised Person Re-Identification". The codes are used to reproduce experimental results in the [**paper**](./).
 
 <!-- ![image](https://github.com/Kali-Hac/SM-SGE/blob/main/img/overview.png) -->
 
@@ -27,7 +27,7 @@ conda install --file requirements.txt
 
 
 ## Datasets and Models
-We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) [**HERE**](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing) and the pre-trained models [**HERE**](https://drive.google.com/file/d/1I7bWc2vCYfBC-uxcCTh4Uvn8ouC1oUNx/view?usp=sharing). Since we report the average performance of our approach on all datasets, here the provided models may produce better results than the paper. <br/>
+We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) [**here**](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing) and the pre-trained models [**here**](https://drive.google.com/file/d/1I7bWc2vCYfBC-uxcCTh4Uvn8ouC1oUNx/view?usp=sharing). Since we report the average performance of our approach on all datasets, here the provided models may produce better results than the paper. <br/>
 
 Please download the pre-processed datasets and model files while unzipping them to ``Datasets/`` and ``ReID_Models/`` folders in the current directory. <br/>
 
@@ -38,7 +38,7 @@ To (1) extract 3D skeleton sequences of length **f=6** from original datasets an
 ```bash
 python Pre-process.py 6
 ```
-**Note**: If you hope to preprocess manually (or *you can get the already preprocessed data [**HERE**](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing)*), please frist download and unzip the original datasets to the current directory with following folder structure:
+**Note**: If you hope to preprocess manually (or *you can get the [already preprocessed data](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing)*), please frist download and unzip the original datasets to the current directory with following folder structure:
 ```bash
 [Current Directory]
 ├─ BIWI
@@ -87,7 +87,7 @@ Datasets
       │    └─ probe
       └─ train_npy_data
 ```
-**Note**: KS20 data need first transforming ".mat" to ".txt". If you are interested in the complete preprocessing of KS20 and CASIA-B, please contact us and we will share. We recommend to directly download the preprocessed data [**HERE**](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing).
+**Note**: KS20 data need first transforming ".mat" to ".txt". If you are interested in the complete preprocessing of KS20 and CASIA-B, please contact us and we will share. We recommend to directly download the preprocessed data [**here**](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing).
 
 ## Model Usage
 
@@ -121,7 +121,7 @@ To apply our SPC-MGR to person re-ID under the large-scale RGB setting (CASIA B)
 
 Here we thank (rijun.liao@gmail.com) for his contribution of extracting 3D skeleton data from CASIA B.
 
-We provide already pre-processed skeleton data of CASIA B for **single-condition** (Nm-Nm, Cl-Cl, Bg-Bg) and **cross-condition evaluation** (Cl-Nm, Bg-Nm) (**f=40/50/60**) [**HERE**](https://drive.google.com/file/d/1Tw5GiaVBzvmTndIHK1ExXTUPscQyLrSw/view?usp=sharing). 
+We provide already pre-processed skeleton data of CASIA B for **single-condition** (Nm-Nm, Cl-Cl, Bg-Bg) and **cross-condition evaluation** (Cl-Nm, Bg-Nm) (**f=40/50/60**) [**here**](https://drive.google.com/file/d/1Tw5GiaVBzvmTndIHK1ExXTUPscQyLrSw/view?usp=sharing). 
 Please download the pre-processed datasets into the directory ``Datasets/``. <br/>
 
 ## Usage
