@@ -32,7 +32,8 @@ We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with vario
 
 **Note**: The access to the Vislab Multi-view KS20 dataset and large-scale RGB-based gait dataset CASIA-B are available upon request. If you have signed the license agreement and been granted the right to use them, please email us with the signed agreement and we will share the complete pre-processed KS20 and CASIA-B data.
 
-All the best models reported in our paper can be acquired [**HERE**](https://drive.google.com/file/d/1I7bWc2vCYfBC-uxcCTh4Uvn8ouC1oUNx/view?usp=sharing) <br/> 
+The pre-trained models can be acquired [**HERE**](https://drive.google.com/file/d/1I7bWc2vCYfBC-uxcCTh4Uvn8ouC1oUNx/view?usp=sharing). Note that we report the average performance of our approach on all datasets, and here the provided models may produce better results than the paper. <br/> 
+
 Please download the pre-processed datasets and model files while unzipping them to ``Datasets/`` and ``ReID_Models/`` folders in the current directory. <br/>
 
 
