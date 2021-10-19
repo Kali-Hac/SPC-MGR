@@ -38,7 +38,7 @@ time_step = 6       # sequence length (f)
 # training params
 batch_size = 256
 nb_epochs = 100000
-patience = 150     # patience for early stopping
+patience = 250     # patience for early stopping
 hid_units = [8]  # numbers of hidden units per each attention head in each layer
 Ms = [8, 1]  # additional entry for the output layer
 k1, k2 = 20, 6  # parameters to compute feature distance matrix
