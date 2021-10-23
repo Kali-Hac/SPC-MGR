@@ -268,7 +268,6 @@ if FLAGS.mode == 'UF':
 			pseudo_lab = tf.placeholder(dtype=tf.int32, shape=(batch_size,))
 			cluster_ftr = tf.placeholder(dtype=tf.float32, shape=(None, all_ftr_size))
 
-
 		with tf.name_scope("MG"), tf.variable_scope("MG", reuse=tf.AUTO_REUSE):
 			def SRL(J_in, J_bias_in, nb_nodes):
 				W_h = tf.Variable(tf.random_normal([3, hid_units[-1]]))
@@ -663,7 +662,7 @@ if FLAGS.mode == 'UF':
 				gal_features_all, gal_labels_all = gal_loader(X_gal_P, X_gal_B, X_gal_H_B, y_gal)
 				mAP, top_1, top_5, top_10 = evaluation()
 				cur_patience += 1
-				if epoch > 0 and mAP > max_acc_1:
+				if epoch > 0 and top_1 > max_acc_2:
 					max_acc_1 = mAP
 					best_cluster_info_1[0] = num_cluster
 					best_cluster_info_1[1] = outlier_num
@@ -809,17 +808,17 @@ elif FLAGS.mode == 'DG' and FLAGS.S_dataset != '':
 	change = '_DG'
 	with tf.Session(graph=loaded_graph, config=config) as sess:
 		loader = tf.train.import_meta_graph(checkpt_file + '.meta')
-		P_in = loaded_graph.get_tensor_by_name("Input/Placeholder_1:0")
-		B_in = loaded_graph.get_tensor_by_name("Input/Placeholder_2:0")
-		H_B_in = loaded_graph.get_tensor_by_name("Input/Placeholder_3:0")
-		P_bias_in = loaded_graph.get_tensor_by_name("Input/Placeholder_5:0")
-		B_bias_in = loaded_graph.get_tensor_by_name("Input/Placeholder_6:0")
-		H_B_bias_in = loaded_graph.get_tensor_by_name("Input/Placeholder_7:0")
-		attn_drop = loaded_graph.get_tensor_by_name("Input/Placeholder_8:0")
-		ffd_drop = loaded_graph.get_tensor_by_name("Input/Placeholder_9:0")
-		is_train = loaded_graph.get_tensor_by_name("Input/Placeholder_10:0")
-		pseudo_lab = loaded_graph.get_tensor_by_name("Input/Placeholder_11:0")
-		cluster_ftr = loaded_graph.get_tensor_by_name("Input/Placeholder_12:0")
+		P_in = loaded_graph.get_tensor_by_name("Input/Placeholder:0")
+		B_in = loaded_graph.get_tensor_by_name("Input/Placeholder_1:0")
+		H_B_in = loaded_graph.get_tensor_by_name("Input/Placeholder_2:0")
+		P_bias_in = loaded_graph.get_tensor_by_name("Input/Placeholder_3:0")
+		B_bias_in = loaded_graph.get_tensor_by_name("Input/Placeholder_4:0")
+		H_B_bias_in = loaded_graph.get_tensor_by_name("Input/Placeholder_5:0")
+		attn_drop = loaded_graph.get_tensor_by_name("Input/Placeholder_6:0")
+		ffd_drop = loaded_graph.get_tensor_by_name("Input/Placeholder_7:0")
+		is_train = loaded_graph.get_tensor_by_name("Input/Placeholder_8:0")
+		pseudo_lab = loaded_graph.get_tensor_by_name("Input/Placeholder_9:0")
+		cluster_ftr = loaded_graph.get_tensor_by_name("Input/Placeholder_10:0")
 
 		P_encode = loaded_graph.get_tensor_by_name("MG/MG/Reshape_45:0")
 		B_encode = loaded_graph.get_tensor_by_name("MG/MG/Reshape_46:0")
@@ -1095,7 +1094,7 @@ elif FLAGS.mode == 'DG' and FLAGS.S_dataset != '':
 			gal_features_all, gal_labels_all = gal_loader(X_gal_P, X_gal_B, X_gal_H_B, y_gal)
 			mAP, top_1, top_5, top_10 = evaluation()
 			cur_patience += 1
-			if epoch > 0 and mAP > max_acc_1:
+			if epoch > 0 and top_1 > max_acc_2:
 				max_acc_1 = mAP
 				best_cluster_info_1[0] = num_cluster
 				best_cluster_info_1[1] = outlier_num
@@ -1110,8 +1109,8 @@ elif FLAGS.mode == 'DG' and FLAGS.S_dataset != '':
 					else:
 						checkpt_file = pre_dir + dataset + '/' + probe + '_' + FLAGS.probe_view + 'v' + \
 						               FLAGS.gallery_view + change + '_best.ckpt'
-					# print(checkpt_file)
-					# saver.save(sess, checkpt_file)
+					print(checkpt_file)
+					saver.save(sess, checkpt_file)
 			if epoch > 0 and top_1 > max_acc_2:
 				max_acc_2 = top_1
 				best_cluster_info_2[0] = num_cluster
