@@ -1,6 +1,7 @@
 ![Python >=3.5](https://img.shields.io/badge/Python->=3.5-blue.svg)
 ![Tensorflow >=1.14.0](https://img.shields.io/badge/Tensorflow->=1.14.0-yellow.svg)
 ![Pytorch >=1.1.0](https://img.shields.io/badge/Pytorch->=1.1.0-green.svg)
+![Faiss-gpu >= 1.6.3](https://img.shields.io/badge/Faiss-gpu->=1.6.3-purple.svg)
 
 # Skeleton Prototype Contrastive Learning with Multi-level Graph Relation Modeling for Unsupervised Person Re-Identification
 By Haocong Rao and Chunyan Miao.
