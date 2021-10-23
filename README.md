@@ -12,7 +12,7 @@ This is the official implementation of SPC-MGR presented by "Skeleton Prototype 
 
 <!-- Abstract: -->
 
-## Requirements
+## Environment
 - Python >= 3.5
 - Tensorflow >= 1.14.0 (GPU)
 - Pytorch >= 1.1.0
