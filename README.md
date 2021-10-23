@@ -15,7 +15,7 @@ This is the official implementation of SPC-MGR presented by "Skeleton Prototype 
 
 ## Environment
 - Python >= 3.5
-- Tensorflow >= 1.14.0 (GPU)
+- Tensorflow-gpu >= 1.14.0
 - Pytorch >= 1.1.0
 - Faiss-gpu >= 1.6.3
 
