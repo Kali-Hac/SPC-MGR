@@ -23,8 +23,12 @@ Here we provide a configuration file to install the extra requirments (if needed
 conda install --file requirements.txt
 ```
 
-**Note**: This file will not install tensorflow/tensorflow-gpu, faiss-gpu, pytroch/torch, please install them according to your graphic cards: [**Tensorflow**](https://www.tensorflow.org/install/pip), [**Pytroch**](https://pytorch.org/get-started/locally/).
-
+**Note**: This file will not install tensorflow/tensorflow-gpu, faiss-gpu, pytroch/torch, please install them according to the cuda version of your graphic cards: [**Tensorflow**](https://www.tensorflow.org/install/pip), [**Pytroch**](https://pytorch.org/get-started/locally/). Take cuda 9.0 for example:
+```bash
+conda install faiss-gpu cuda90 -c pytorch
+conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=9.0 -c pytorch
+conda install tensorflow==1.14
+```
 
 ## Datasets and Models
 We provide three already pre-processed datasets (IAS-Lab, BIWI, KGBD) with various sequence lengths (**f=4/6/8/10/12**) [**here**](https://drive.google.com/file/d/1PFoDZpamw5mcvWZxy1noxshKRv_eQdYx/view?usp=sharing) and the pre-trained models [**here**](https://drive.google.com/file/d/1I7bWc2vCYfBC-uxcCTh4Uvn8ouC1oUNx/view?usp=sharing). Since we report the average performance of our approach on all datasets, here the provided models may produce better results than the paper. <br/>
