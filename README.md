@@ -18,12 +18,12 @@ This is the official implementation of SPC-MGR presented by "Skeleton Prototype 
 - Pytorch >= 1.1.0
 - Faiss-gpu >= 1.6.3
 
-Here we provide a configuration file to install the requirments with cudatoolkit=9.0 and cudnn=7.6.5:
+Here we provide a configuration file to install the extra requirments (if needed):
 ```bash
 conda install --file requirements.txt
 ```
 
-**Note**: If this file fails to work on your machine, please install the cudatoolkit and cudnn version corresponding to your graphic cards.
+**Note**: This file will not install tensorflow/tensorflow-gpu, faiss-gpu, pytroch/torch, please install them according to your graphic cards: [**Tensorflow**](https://www.tensorflow.org/install/pip), [**Pytroch**](https://pytorch.org/get-started/locally/).
 
 
 ## Datasets and Models
