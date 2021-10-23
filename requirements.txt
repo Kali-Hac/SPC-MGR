@@ -61,7 +61,6 @@ readline=8.1=h27cfd23_0
 scipy=1.6.2=py37had2a1c9_1
 setuptools=52.0.0=py37h06a4308_0
 six=1.15.0=pyhd3eb1b0_0
-sklearn=1.0
 sqlite=3.35.4=hdfb4753_0
 termcolor=1.1.0=py37h06a4308_1
 tk=8.6.10=hbc83047_0
