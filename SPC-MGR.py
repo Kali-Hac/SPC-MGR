@@ -59,7 +59,7 @@ tf.app.flags.DEFINE_string('gallery_view', '', "test different views on CASIA B 
 tf.app.flags.DEFINE_string('struct_only', '0', "struct_only")
 tf.app.flags.DEFINE_string('m', '8', "structural relation heads")
 tf.app.flags.DEFINE_string('probe_type', '', "probe.gallery")
-tf.app.flags.DEFINE_string('patience', '250', "epochs for early stopping")
+tf.app.flags.DEFINE_string('patience', '200', "epochs for early stopping")
 tf.app.flags.DEFINE_string('fusion_lambda', '1', "collaboration fusion coefficient")
 tf.app.flags.DEFINE_string('S_dataset', '', "Source Dataset")
 tf.app.flags.DEFINE_string('S_probe', '', "Source Dataset probe")
