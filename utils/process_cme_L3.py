@@ -73,8 +73,13 @@ def gen_train_data(dataset, split, time_step, nb_nodes, nhood, global_att, batch
 		y_test = np.load(
 			'Datasets/' + frames_ps + dataset + '_test_npy_data/' + PG_type + '/frame_id_' + dataset + '_' + str(time_step) + '.npy')
 
-	if dataset != 'OUMVLP':
-		X_train, y_train = class_samp_gen(X_train, y_train, ids, batch_size)
+	# if dataset != 'OUMVLP':
+	# 	X_train, y_train = class_samp_gen(X_train, y_train, ids, batch_size)
+
+	# randomly shuffle
+	rand_p = np.random.permutation(X_train.shape[0])
+	X_train = X_train[rand_p]
+	y_train = y_train[rand_p]
 	# print(X_train.shape, y_train.shape)
 
 	ids_keys = sorted(list(ids.keys()))
@@ -580,6 +585,7 @@ def cal_nAUC(scores, labels):
 """
  Generate training data with evenly distributed classes.
 """
+# not used
 def class_samp_gen(X, y, ids_, batch_size):
 	class_num = len(ids_.keys())
 	ids_ = sorted(ids_.items(), key=lambda item: item[0])
