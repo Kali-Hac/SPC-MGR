@@ -135,8 +135,13 @@ def gen_train_data(dataset, split, time_step, nb_nodes, nhood, global_att, batch
 
 	# if dataset != 'CASIA_B':
 	# print(X_train.shape, X_test.shape)
+	# if dataset != 'KGBD':
+	# 	X_train, y_train = class_samp_gen(X_train, y_train, ids, batch_size)
 
-	X_train, y_train = class_samp_gen(X_train, y_train, ids, batch_size)
+	# randomly shuffle
+	rand_p = np.random.permutation(X_train.shape[0])
+	X_train = X_train[rand_p]
+	y_train = y_train[rand_p]
 	if D:
 		D_13_train, D_16_train = cal_features_ave(X_train[:, :, :nb_nodes], X_train[:, :, nb_nodes:nb_nodes*2],
 		                                          X_train[:, :, nb_nodes*2:])
@@ -294,6 +299,8 @@ def gen_train_data(dataset, split, time_step, nb_nodes, nhood, global_att, batch
 		nb_classes = 20
 	elif dataset == 'CASIA_B':
 		nb_classes = 124
+	elif dataset == 'KinectREID':
+		nb_classes = 71
 
 	adj_joint = adj_joint[np.newaxis]
 	biases_joint = adj_to_bias(adj_joint, [nb_nodes], nhood=nhood)
@@ -622,6 +629,7 @@ def cal_nAUC(scores, labels):
 """
  Generate training data with evenly distributed classes.
 """
+# not used
 def class_samp_gen(X, y, ids_, batch_size):
 	class_num = len(ids_.keys())
 	ids_ = sorted(ids_.items(), key=lambda item: item[0])
