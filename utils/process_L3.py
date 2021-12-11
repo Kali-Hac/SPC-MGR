@@ -135,8 +135,8 @@ def gen_train_data(dataset, split, time_step, nb_nodes, nhood, global_att, batch
 
 	# if dataset != 'CASIA_B':
 	# print(X_train.shape, X_test.shape)
-	# if dataset != 'KGBD':
-	# 	X_train, y_train = class_samp_gen(X_train, y_train, ids, batch_size)
+	if dataset != 'KGBD':
+		X_train, y_train = class_samp_gen(X_train, y_train, ids, batch_size)
 
 	# randomly shuffle
 	rand_p = np.random.permutation(X_train.shape[0])
@@ -629,7 +629,7 @@ def cal_nAUC(scores, labels):
 """
  Generate training data with evenly distributed classes.
 """
-# not used
+# replaced by random shuffling
 def class_samp_gen(X, y, ids_, batch_size):
 	class_num = len(ids_.keys())
 	ids_ = sorted(ids_.items(), key=lambda item: item[0])
