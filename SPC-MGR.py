@@ -974,7 +974,7 @@ elif FLAGS.mode == 'DG' and FLAGS.S_dataset != '':
 				matches = (gallery_ids[indices] == query_ids[:, np.newaxis])
 				# Compute AP for each query
 				aps = []
-				if (FLAGS.probe_view != '' and (FLAGS.probe_view == FLAGS.gallery_view or FLAGS.probe_type == 'nm.nm')) or (FLAGS.probe_type == 'cl.cl' or FLAGS.probe_type == 'bg.bg'):
+				if (FLAGS.probe_view != '' and FLAGS.probe_view == FLAGS.gallery_view) or (FLAGS.probe_type == 'nm.nm' or FLAGS.probe_type == 'cl.cl' or FLAGS.probe_type == 'bg.bg'):
 					for i in range(1, m):
 						valid = ((gallery_ids[indices[i]] != query_ids[i]) |
 						         (gallery_cams[indices[i]] != query_cams[i]))
@@ -1011,7 +1011,7 @@ elif FLAGS.mode == 'DG' and FLAGS.S_dataset != '':
 
 				top_1 = top_5 = top_10 = 0
 				probe_num = dist_sort.shape[0]
-				if (FLAGS.probe_view != '' and (FLAGS.probe_view == FLAGS.gallery_view or FLAGS.probe_type == 'nm.nm')) or (FLAGS.probe_type == 'cl.cl' or FLAGS.probe_type == 'bg.bg'):
+				if (FLAGS.probe_view != '' and FLAGS.probe_view == FLAGS.gallery_view) or (FLAGS.probe_type == 'nm.nm' or FLAGS.probe_type == 'cl.cl' or FLAGS.probe_type == 'bg.bg'):
 					for i in range(probe_num):
 						# print(dist_sort[i, :10])
 						if t_y[i] in y[dist_sort[i, 1:2]]:
