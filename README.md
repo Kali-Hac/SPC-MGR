@@ -7,7 +7,7 @@
 By Haocong Rao and Chunyan Miao.
 
 ## Introduction
-This is the official implementation of SPC-MGR presented by "Skeleton Prototype Contrastive Learning with Multi-level Graph Relation Modeling for Unsupervised Person Re-Identification". The codes are used to reproduce experimental results in the [**paper**](./).
+This is the official implementation of SPC-MGR presented by "Skeleton Prototype Contrastive Learning with Multi-level Graph Relation Modeling for Unsupervised Person Re-Identification". The codes are used to reproduce experimental results in the [**paper**](https://arxiv.org/abs/2208.11814).
 
 <!-- ![image](https://github.com/Kali-Hac/SM-SGE/blob/main/img/overview.png) -->
 
