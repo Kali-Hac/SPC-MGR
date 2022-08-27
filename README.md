@@ -170,6 +170,18 @@ Please see ```SPC-MGR.py``` for more details.
 
 The SPC-MGR is built based in part on the project of [GAT](https://github.com/PetarV-/GAT) and part on our project of [MG-SCR](https://github.com/Kali-Hac/MG-SCR). Thanks to Veličković *et al.* for opening source of their excellent works [GAT](https://github.com/PetarV-/GAT). 
 
+## Citation
+If you find our work useful for your research, please cite our paper
+```bash
+@article{rao2022spc,
+  title={Skeleton Prototype Contrastive Learning with Multi-level Graph Relation Modeling for Unsupervised Person Re-Identification},
+  author={Rao, Haocong and Miao, Chunyan},
+  journal={arXiv preprint arXiv:2208.11814},
+  year={2022}
+}
+```
+More awesome skeleton-based models are collected in our [Awesome-Skeleton-Based-Models](https://github.com/Kali-Hac/Awesome-Skeleton-Based-Models).
+
 ## License
 
 SPC-MGR is released under the MIT License.
