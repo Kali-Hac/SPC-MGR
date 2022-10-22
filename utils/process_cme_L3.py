@@ -127,76 +127,76 @@ def gen_train_data(dataset, split, time_step, nb_nodes, nhood, global_att, batch
 		# print(new_adj)
 		return new_adj
 	import scipy.sparse
-	if dataset == 'KS20':
-		# Joint-Level adjacent matrix
-		j_pair_1 = np.array([3, 2, 20, 8, 8, 9, 10, 9, 11, 10, 4, 20, 4, 5, 5, 6, 6, 7, 1, 20, 1, 0, 16, 0,
-		                12, 0, 16, 17, 12, 13, 17, 18, 19, 18, 13, 14, 14, 15, 2, 20, 11, 23, 10, 24, 7, 21, 6, 22])
-		j_pair_2 = np.array([2, 3, 8, 20, 9, 8, 9, 10, 10, 11, 20, 4, 5, 4, 6, 5, 7, 6, 20, 1, 0, 1, 0, 16,
-		                0, 12, 17, 16, 13, 12, 18, 17, 18, 19, 14, 13, 15, 14, 20, 2, 23, 11, 24, 10, 21, 7, 22, 6])
-		con_matrix = np.ones([48])
-		adj_joint = scipy.sparse.coo_matrix((con_matrix, (j_pair_1, j_pair_2)), shape=(nb_nodes, nb_nodes)).toarray()
-		if global_att:
-			adj_joint = np.ones([25, 25])
-		# hyper-Level (interpolation) adjacent matrix, NOT used, replaced by generate_denser_adj
-		# i_pair_1 = np.array(
-		# 	[3, 31, 31, 2, 2, 32, 32, 20, 20, 42, 42, 8, 8, 37, 37, 9, 9, 44, 44, 10, 10, 38, 38, 11, 11,
-		# 	 39, 39, 23, 10, 40, 40, 24, 20, 41, 41, 4, 4, 33, 33, 5, 5, 43, 43, 6, 6, 34, 34, 7, 7, 35,
-		# 	 35, 21, 6, 36, 36, 22,
-		# 	 20, 45, 45, 1, 1, 30, 30, 0, 0, 46, 46, 12, 12, 26, 26, 13, 13, 48, 48, 14, 14, 27, 27, 15,
-		# 	 0, 47, 47, 16, 16, 28, 28, 17, 17, 49, 49, 18, 18, 29, 29, 19])
-		# # miss 25
-		# i_pair_1 = i_pair_1.tolist()
-		# for i in range(len(i_pair_1)):
-		# 	if i_pair_1[i] > 24:
-		# 		i_pair_1[i] -= 1
-		# i_pair_1 = np.array(i_pair_1)
-		# i_pair_2 = np.array(
-		# 	[31, 3, 2, 31, 32, 2, 20, 32, 42, 20, 8, 42, 37, 8, 9, 37, 44, 9, 10, 44, 38, 10, 11, 38, 39,
-		# 	 11, 23, 39, 40, 10, 24, 40, 41, 20, 4, 41, 33, 4, 5, 33, 43, 5, 6, 43, 34, 6, 7, 34, 35, 7,
-		# 	 21, 35, 36, 6, 22, 36,
-		# 	 45, 20, 1, 45, 30, 1, 0, 30, 46, 0, 12, 46, 26, 12, 13, 26, 48, 13, 14, 48, 27, 14, 15, 27,
-		# 	 47, 0, 16, 47, 28, 16, 17, 28, 49, 17, 18, 49, 29, 18, 19, 29])
-		# i_pair_2 = i_pair_2.tolist()
-		# for i in range(len(i_pair_2)):
-		# 	if i_pair_2[i] > 24:
-		# 		i_pair_2[i] -= 1
-		# i_pair_2 = np.array(i_pair_2)
-		# # print(i_pair_1.shape, i_pair_2.shape)
-		# con_matrix = np.ones([96])
-		# adj_interp = scipy.sparse.coo_matrix((con_matrix, (i_pair_1, i_pair_2)),
-		#                                     shape=(49, 49)).toarray()
-		adj_interp = generate_denser_adj(adj_joint)
-	elif dataset == 'CASIA_B':
-		# Joint-Level adjacent matrix
-		j_pair_1 = np.array([0, 1, 1, 2, 2, 3, 3, 4, 1, 5, 5, 6, 6, 7, 1, 8, 8, 9, 9, 10, 1, 11, 11, 12, 12, 13])
-		j_pair_2 = np.array([1, 0, 2, 1, 3, 2, 4, 3, 5, 1, 6, 5, 7, 6, 8, 1, 9, 8, 10, 9, 11, 1, 12, 11, 13, 12])
-		con_matrix = np.ones([26])
-		adj_joint = scipy.sparse.coo_matrix((con_matrix, (j_pair_1, j_pair_2)), shape=(nb_nodes, nb_nodes)).toarray()
-		if global_att:
-			adj_joint = np.ones([14, 14])
-		adj_interp = generate_denser_adj(adj_joint)
-	elif dataset == 'OUMVLP':
-		# Joint-Level adjacent matrix
-		j_pair_1 = np.array([0, 1, 1, 2, 2, 3, 3, 4, 1, 5, 5, 6, 6, 7, 1, 8, 8, 9, 9, 10, 1, 11, 11, 12, 12, 13, 14,  0, 15,  0,
-		                     15, 17, 16, 14])
-		j_pair_2 = np.array([1, 0, 2, 1, 3, 2, 4, 3, 5, 1, 6, 5, 7, 6, 8, 1, 9, 8, 10, 9, 11, 1, 12, 11, 13, 12,  0, 14,  0, 15,
-		                     17, 15, 14, 16])
-		con_matrix = np.ones([34])
-		adj_joint = scipy.sparse.coo_matrix((con_matrix, (j_pair_1, j_pair_2)), shape=(nb_nodes, nb_nodes)).toarray()
-		if global_att:
-			adj_joint = np.ones([18, 18])
-		adj_interp = generate_denser_adj(adj_joint)
-	else:
-		# Joint-Level adjacent matrix
-		j_pair_1 = np.array([3, 2, 2, 8, 8, 9, 10, 9, 11, 10, 4, 2, 4, 5, 5, 6, 6, 7, 1, 2, 1, 0, 16, 0,
-		                12, 0, 16, 17, 12, 13, 17, 18, 19, 18, 13, 14, 14, 15])
-		j_pair_2 = np.array([2, 3, 8, 2, 9, 8, 9, 10, 10, 11, 2, 4, 5, 4, 6, 5, 7, 6, 2, 1, 0, 1, 0, 16,
-		                0, 12, 17, 16, 13, 12, 18, 17, 18, 19, 14, 13, 15, 14])
-		con_matrix = np.ones([38])
-		adj_joint = scipy.sparse.coo_matrix((con_matrix, (j_pair_1, j_pair_2)), shape=(nb_nodes, nb_nodes)).toarray()
-		if global_att:
-			adj_joint = np.ones([20, 20])
-		adj_interp = generate_denser_adj(adj_joint)
+	# if dataset == 'KS20':
+	# 	# Joint-Level adjacent matrix
+	# 	j_pair_1 = np.array([3, 2, 20, 8, 8, 9, 10, 9, 11, 10, 4, 20, 4, 5, 5, 6, 6, 7, 1, 20, 1, 0, 16, 0,
+	# 	                12, 0, 16, 17, 12, 13, 17, 18, 19, 18, 13, 14, 14, 15, 2, 20, 11, 23, 10, 24, 7, 21, 6, 22])
+	# 	j_pair_2 = np.array([2, 3, 8, 20, 9, 8, 9, 10, 10, 11, 20, 4, 5, 4, 6, 5, 7, 6, 20, 1, 0, 1, 0, 16,
+	# 	                0, 12, 17, 16, 13, 12, 18, 17, 18, 19, 14, 13, 15, 14, 20, 2, 23, 11, 24, 10, 21, 7, 22, 6])
+	# 	con_matrix = np.ones([48])
+	# 	adj_joint = scipy.sparse.coo_matrix((con_matrix, (j_pair_1, j_pair_2)), shape=(nb_nodes, nb_nodes)).toarray()
+	# 	if global_att:
+	# 		adj_joint = np.ones([25, 25])
+	# 	# hyper-Level (interpolation) adjacent matrix, NOT used, replaced by generate_denser_adj
+	# 	# i_pair_1 = np.array(
+	# 	# 	[3, 31, 31, 2, 2, 32, 32, 20, 20, 42, 42, 8, 8, 37, 37, 9, 9, 44, 44, 10, 10, 38, 38, 11, 11,
+	# 	# 	 39, 39, 23, 10, 40, 40, 24, 20, 41, 41, 4, 4, 33, 33, 5, 5, 43, 43, 6, 6, 34, 34, 7, 7, 35,
+	# 	# 	 35, 21, 6, 36, 36, 22,
+	# 	# 	 20, 45, 45, 1, 1, 30, 30, 0, 0, 46, 46, 12, 12, 26, 26, 13, 13, 48, 48, 14, 14, 27, 27, 15,
+	# 	# 	 0, 47, 47, 16, 16, 28, 28, 17, 17, 49, 49, 18, 18, 29, 29, 19])
+	# 	# # miss 25
+	# 	# i_pair_1 = i_pair_1.tolist()
+	# 	# for i in range(len(i_pair_1)):
+	# 	# 	if i_pair_1[i] > 24:
+	# 	# 		i_pair_1[i] -= 1
+	# 	# i_pair_1 = np.array(i_pair_1)
+	# 	# i_pair_2 = np.array(
+	# 	# 	[31, 3, 2, 31, 32, 2, 20, 32, 42, 20, 8, 42, 37, 8, 9, 37, 44, 9, 10, 44, 38, 10, 11, 38, 39,
+	# 	# 	 11, 23, 39, 40, 10, 24, 40, 41, 20, 4, 41, 33, 4, 5, 33, 43, 5, 6, 43, 34, 6, 7, 34, 35, 7,
+	# 	# 	 21, 35, 36, 6, 22, 36,
+	# 	# 	 45, 20, 1, 45, 30, 1, 0, 30, 46, 0, 12, 46, 26, 12, 13, 26, 48, 13, 14, 48, 27, 14, 15, 27,
+	# 	# 	 47, 0, 16, 47, 28, 16, 17, 28, 49, 17, 18, 49, 29, 18, 19, 29])
+	# 	# i_pair_2 = i_pair_2.tolist()
+	# 	# for i in range(len(i_pair_2)):
+	# 	# 	if i_pair_2[i] > 24:
+	# 	# 		i_pair_2[i] -= 1
+	# 	# i_pair_2 = np.array(i_pair_2)
+	# 	# # print(i_pair_1.shape, i_pair_2.shape)
+	# 	# con_matrix = np.ones([96])
+	# 	# adj_interp = scipy.sparse.coo_matrix((con_matrix, (i_pair_1, i_pair_2)),
+	# 	#                                     shape=(49, 49)).toarray()
+	# 	adj_interp = generate_denser_adj(adj_joint)
+	# elif dataset == 'CASIA_B':
+	# 	# Joint-Level adjacent matrix
+	# 	j_pair_1 = np.array([0, 1, 1, 2, 2, 3, 3, 4, 1, 5, 5, 6, 6, 7, 1, 8, 8, 9, 9, 10, 1, 11, 11, 12, 12, 13])
+	# 	j_pair_2 = np.array([1, 0, 2, 1, 3, 2, 4, 3, 5, 1, 6, 5, 7, 6, 8, 1, 9, 8, 10, 9, 11, 1, 12, 11, 13, 12])
+	# 	con_matrix = np.ones([26])
+	# 	adj_joint = scipy.sparse.coo_matrix((con_matrix, (j_pair_1, j_pair_2)), shape=(nb_nodes, nb_nodes)).toarray()
+	# 	if global_att:
+	# 		adj_joint = np.ones([14, 14])
+	# 	adj_interp = generate_denser_adj(adj_joint)
+	# elif dataset == 'OUMVLP':
+	# 	# Joint-Level adjacent matrix
+	# 	j_pair_1 = np.array([0, 1, 1, 2, 2, 3, 3, 4, 1, 5, 5, 6, 6, 7, 1, 8, 8, 9, 9, 10, 1, 11, 11, 12, 12, 13, 14,  0, 15,  0,
+	# 	                     15, 17, 16, 14])
+	# 	j_pair_2 = np.array([1, 0, 2, 1, 3, 2, 4, 3, 5, 1, 6, 5, 7, 6, 8, 1, 9, 8, 10, 9, 11, 1, 12, 11, 13, 12,  0, 14,  0, 15,
+	# 	                     17, 15, 14, 16])
+	# 	con_matrix = np.ones([34])
+	# 	adj_joint = scipy.sparse.coo_matrix((con_matrix, (j_pair_1, j_pair_2)), shape=(nb_nodes, nb_nodes)).toarray()
+	# 	if global_att:
+	# 		adj_joint = np.ones([18, 18])
+	# 	adj_interp = generate_denser_adj(adj_joint)
+	# else:
+	# 	# Joint-Level adjacent matrix
+	# 	j_pair_1 = np.array([3, 2, 2, 8, 8, 9, 10, 9, 11, 10, 4, 2, 4, 5, 5, 6, 6, 7, 1, 2, 1, 0, 16, 0,
+	# 	                12, 0, 16, 17, 12, 13, 17, 18, 19, 18, 13, 14, 14, 15])
+	# 	j_pair_2 = np.array([2, 3, 8, 2, 9, 8, 9, 10, 10, 11, 2, 4, 5, 4, 6, 5, 7, 6, 2, 1, 0, 1, 0, 16,
+	# 	                0, 12, 17, 16, 13, 12, 18, 17, 18, 19, 14, 13, 15, 14])
+	# 	con_matrix = np.ones([38])
+	# 	adj_joint = scipy.sparse.coo_matrix((con_matrix, (j_pair_1, j_pair_2)), shape=(nb_nodes, nb_nodes)).toarray()
+	# 	if global_att:
+	# 		adj_joint = np.ones([20, 20])
+	# 	adj_interp = generate_denser_adj(adj_joint)
 
 	# Part-Level adjacent matrix
 	p_pair_1 = np.array([5, 6, 5, 8, 6, 7, 8, 9, 5, 4, 4, 2, 4, 0, 2, 3, 1, 0])
@@ -221,8 +221,8 @@ def gen_train_data(dataset, split, time_step, nb_nodes, nhood, global_att, batch
 		adj_body = np.ones([5, 5])
 
 	# if dataset != 'KS20':
-	X_train_In = generate_denser_graph_data(X_train_J, adj_joint, nb_nodes)
-	X_test_In = generate_denser_graph_data(X_test_J, adj_joint, nb_nodes)
+	# X_train_In = generate_denser_graph_data(X_train_J, adj_joint, nb_nodes)
+	# X_test_In = generate_denser_graph_data(X_test_J, adj_joint, nb_nodes)
 
 	if dataset == 'IAS':
 		nb_classes = 11
@@ -237,8 +237,8 @@ def gen_train_data(dataset, split, time_step, nb_nodes, nhood, global_att, batch
 	elif dataset == 'OUMVLP':
 		nb_classes = 10295
 
-	adj_joint = adj_joint[np.newaxis]
-	biases_joint = adj_to_bias(adj_joint, [nb_nodes], nhood=nhood)
+	# adj_joint = adj_joint[np.newaxis]
+	# biases_joint = adj_to_bias(adj_joint, [nb_nodes], nhood=nhood)
 
 	adj_part = adj_part[np.newaxis]
 	biases_part = adj_to_bias(adj_part, [10], nhood=1)
@@ -246,14 +246,14 @@ def gen_train_data(dataset, split, time_step, nb_nodes, nhood, global_att, batch
 	adj_body = adj_body[np.newaxis]
 	biases_body = adj_to_bias(adj_body, [5], nhood=1)
 
-	adj_interp = adj_interp[np.newaxis]
-	biases_interp = adj_to_bias(adj_interp, [nb_nodes*2-1], nhood=1)
+	# adj_interp = adj_interp[np.newaxis]
+	# biases_interp = adj_to_bias(adj_interp, [nb_nodes*2-1], nhood=1)
 
 	adj_hyper_body = adj_hyper_body[np.newaxis]
 	biases_hyper_body = adj_to_bias(adj_hyper_body, [3], nhood=1)
 
-	return X_train_J, X_train_P, X_train_B, X_train_H_B, X_train_In, y_train, X_test_J, X_test_P, X_test_B, X_test_H_B, X_test_In, y_test, \
-		       adj_joint, biases_joint, adj_part, biases_part, adj_body, biases_body, adj_hyper_body, biases_hyper_body, adj_interp, biases_interp, nb_classes
+	return 0, X_train_P, X_train_B, X_train_H_B, 0, y_train, 0, X_test_P, X_test_B, X_test_H_B, 0, y_test, \
+		       0, 0, adj_part, biases_part, adj_body, biases_body, adj_hyper_body, biases_hyper_body, 0, 0, nb_classes
 
 """
  Generate part-level  skeleton graphs.
