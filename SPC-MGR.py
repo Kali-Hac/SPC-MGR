@@ -232,6 +232,8 @@ if FLAGS.probe_type == '':
 			X_train_B = np.array(X_train_B_all)
 			X_train_H_B = np.array(X_train_H_B_all)
 			y_train = np.array(y_train)
+	del _
+	gc.collect()
 
 else:
 	from utils import process_cme_L3 as process
@@ -240,6 +242,8 @@ else:
 		process.gen_train_data(dataset=dataset, split=probe, time_step=time_step,
 		                       nb_nodes=nb_nodes, nhood=nhood, global_att=global_att, batch_size=batch_size, PG_type=FLAGS.probe_type.split('.')[0])
 	print('## [Probe].[Gallery]', FLAGS.probe_type)
+	del _
+	gc.collect()
 
 
 all_ftr_size = hid_units[0] * (15 + 3)
@@ -657,6 +661,8 @@ if FLAGS.mode == 'UF':
 					process.gen_train_data(dataset=dataset, split=probe, time_step=time_step,
 					                       nb_nodes=nb_nodes, nhood=nhood, global_att=global_att, batch_size=batch_size,
 					                       PG_type=FLAGS.probe_type.split('.')[1])
+			del _
+			gc.collect()
 			for epoch in range(cluster_epochs):
 				train_features_all, train_labels_all = train_loader(X_train_P, X_train_B, X_train_H_B, y_train)
 				gal_features_all, gal_labels_all = gal_loader(X_gal_P, X_gal_B, X_gal_H_B, y_gal)
@@ -1088,6 +1094,8 @@ elif FLAGS.mode == 'DG' and FLAGS.S_dataset != '':
 				process.gen_train_data(dataset=dataset, split=probe, time_step=time_step,
 				                       nb_nodes=nb_nodes, nhood=nhood, global_att=global_att, batch_size=batch_size,
 				                       PG_type=FLAGS.probe_type.split('.')[1])
+		del _
+		gc.collect()
 		for epoch in range(cluster_epochs):
 			train_features_all, train_labels_all = train_loader(X_train_P, X_train_B, X_train_H_B, y_train)
 			# train_features_all = train_features_all.numpy()
